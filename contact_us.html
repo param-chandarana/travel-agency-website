@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="styles.css">
+    <title>Contact Us | TravelVista</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo_with_text.png" class="d-inline-block align-text-top logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="explore_packages.html">Packages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about_us.html">About Us</a>
+                    </li>
+                    <li class="nav-item active-item">
+                        <a class="nav-link active" href="contact_us.html">Contact Us</a>
+                    </li>
+                </ul>
+                <form action="" class="search">
+                    <div class="search-box">
+                        <input class="search-input" type="text" name="" placeholder="Search">
+                        <button class="search-button" href="#">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="signup.html">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-fluid heading-background d-flex flex-column align-items-center justify-content-center py-4">
+        <h1 class="heading">Contact Us</h1>
+        <div class="cover-rule"></div>
+    </div>
+    <div class="container mt-4">
+        <div class="row mt-4">
+            <!-- Left Column: Contact Information and Address -->
+            <div class="col-md-4 d-flex flex-column">
+                <div class="mb-4 flex-grow-1 contact-us-card">
+                    <h2 class="subheading">Contact Information</h2>
+                    <div class="d-flex align-items-center">
+                        <i class="fa fa-envelope me-2 icon"></i>
+                        <span>Email: travelvista@example.com</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <i class="fa fa-phone me-2 icon"></i>
+                        <span>Phone: +1234567890</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <i class="fa fa-fax me-2 icon"></i>
+                        <span>Fax: +9876543210</span>
+                    </div>
+                </div>
+                <div class="mb-4 flex-grow-1 contact-us-card">
+                    <h2 class="subheading">Office 1 Address</h2>
+                    <div>
+                        <i class="fa fa-map-marker-alt me-2 icon"></i><span>202, ABC Complex,</span>
+                    </div>
+                    <div>
+                        <i class="fa fa-map-marker-alt me-2 hidden icon"></i><span>XYZ Road,</span>
+                    </div>
+                    <div>
+                        <i class="fa fa-map-marker-alt me-2 hidden icon"></i><span>Ahmedabad - 380003</span>
+                    </div>
+                </div>
+                <div class="mb-4 flex-grow-1 contact-us-card">
+                    <h5>Office 2 Address</h5>
+                    <div>
+                        <i class="fa fa-map-marker-alt me-2 icon"></i><span>105, XYZ Plaza,</span>
+                    </div>
+                    <div>
+                        <i class="fa fa-map-marker-alt me-2 hidden icon"></i><span>ABC Road,</span>
+                    </div>
+                    <div>
+                        <i class="fa fa-map-marker-alt me-2 hidden icon"></i><span>Rajkot - 360003</span>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Right Column: Contact Form -->
+            <div class="col-md-8">
+                <h2 class="subheading">Get in Touch: Drop us a message and we will be happy to assist you!</h2>
+                <form method="post" id="contactForm" onsubmit="return validateForm()">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name:</label>
+                        <input type="text" class="form-control" id="name" placeholder="Your Name">
+                        <div class="error-message text-danger small" id="name-error"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email:</label>
+                        <input type="text" class="form-control" id="email" placeholder="you@example.com">
+                        <div class="error-message text-danger small" id="email-error"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Phone No.:</label>
+                        <input type="tel" class="form-control" id="phone" placeholder="+1234567890">
+                        <div class="error-message text-danger small" id="phone-error"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message:</label>
+                        <textarea class="form-control" id="message" rows="4" placeholder="Your Message"></textarea>
+                        <div class="error-message text-danger small" id="message-error"></div>
+                    </div>
+                    <div class="mb-3">
+                        <button type="button" class="btn btn-purple me-2" id="clearButton" onclick="clearForm()">Clear</button>
+                        <button type="submit" class="btn btn-purple">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>    
+
+    <!-- Footer -->
+    <footer class="footer bg-light py-4 mt-4">
+        <div class="container">
+            <div class="row">
+                <!-- First Column: Logo -->
+                <div class="col-md-4 mb-4">
+                    <img src="images/logo_text_bottom.png" alt="Logo" class="footer-logo img-fluid mx-2 my-2">
+                </div>
+        
+                <!-- Second Column: Newsletter Form -->
+                <div class="col-md-5">
+                    <h5 class="footer-heading">Stay Connected, Discover More</h5>
+                    <p class="footer-text">Subscribe to our Newsletter!</p>
+                    <form class="newsletter-form" method="post" id="footerForm" onsubmit="return validateNewsletterForm()">
+                        <div class="mb-3">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <input type="text" class="form-control my-1" id="newsletterName" placeholder="Name">
+                                    <div class="error-message text-danger small" id="newsletterNameError"></div>
+                                </div>
+                                <div class="col-md-5">
+                                    <input type="text" class="form-control my-1" id="newsletterEmail" placeholder="Email">
+                                    <div class="error-message text-danger small" id="newsletterEmailError"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-purple mb-4">Subscribe</button>
+                    </form>
+                </div>
+        
+                <!-- Third Column: Links -->
+                <div class="col-md-3">
+                <h5 class="footer-heading">Quick Links</h5>
+                <ul class="list-unstyled footer-links">
+                    <li><a href="all_packages.html" class="text-decoration-none footer-link">All Packages</a></li>
+                    <li><a href="faq.html" class="text-decoration-none footer-link">FAQ</a></li>
+                    <li><a href="testimonials.html" class="text-decoration-none footer-link">Testimonials</a></li>
+                    <li><a href="privacy_policy.html" class="text-decoration-none footer-link">Privacy Policy</a></li>
+                    <li><a href="tnc.html" class="text-decoration-none footer-link">Terms & Conditions</a></li>
+                </ul>
+                <div class="footer-social">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook me-2"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram me-2"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter me-2"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-whatsapp me-2"></i></a>
+                </div>
+                <p class="footer-email mt-3">Email: travelvista@example.com</p>
+                </div>
+            </div>
+        </div>
+    </footer>      
+
+    <!-- Script -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        function validateForm() {
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const phoneInput = document.getElementById('phone');
+            const messageInput = document.getElementById('message');
+    
+            const nameError = document.getElementById('name-error');
+            const emailError = document.getElementById('email-error');
+            const phoneError = document.getElementById('phone-error');
+            const messageError = document.getElementById('message-error');
+    
+            // Get form elements
+            const name = nameInput.value;
+            const email = emailInput.value;
+            const phone = phoneInput.value;
+            const message = messageInput.value;
+    
+            // Initialize an array to store validation messages
+            const validationMessages = [];
+    
+            // Clear previous error messages
+            nameError.innerHTML = ''; 
+            emailError.innerHTML = ''; 
+            phoneError.innerHTML = ''; 
+            messageError.innerHTML = ''; 
+    
+            if (name.trim() === '') {
+                validationMessages.push('Please enter your name.');
+                nameError.innerHTML = 'Please enter your name.';
+            }
+    
+            if (email.trim() === '') {
+                validationMessages.push('Please enter your email.');
+                emailError.innerHTML = 'Please enter your email.';
+            } else if (!isValidEmail(email)) {
+                validationMessages.push('Please enter a valid email.');
+                emailError.innerHTML = 'Please enter a valid email.';
+            }
+    
+            if (phone.trim() === '') {
+                validationMessages.push('Please enter your phone number.');
+                phoneError.innerHTML = 'Please enter your phone number.';
+            }
+    
+            if (message.trim() === '') {
+                validationMessages.push('Please enter your message.');
+                messageError.innerHTML = 'Please enter your message.';
+            }
+    
+            // If there are validation errors, prevent the form from submitting
+            if (validationMessages.length > 0) {
+                return false;
+            }
+    
+            return true; // Form is valid, allow submission
+        }
+    
+        // Function to validate email address
+        function isValidEmail(email) {
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            return emailPattern.test(email);
+        }
+
+        function clearForm() {
+            // Get references to the form elements
+            var nameInput = document.getElementById("name");
+            var emailInput = document.getElementById("email");
+            var phoneInput = document.getElementById("phone");
+            var messageTextarea = document.getElementById("message");
+
+            // Clear the input values
+            nameInput.value = "";
+            emailInput.value = "";
+            phoneInput.value = "";
+            messageTextarea.value = "";
+
+            // Clear any existing error messages
+            document.getElementById("name-error").textContent = "";
+            document.getElementById("email-error").textContent = "";
+            document.getElementById("phone-error").textContent = "";
+            document.getElementById("message-error").textContent = "";
+        }
+
+        function validateNewsletterForm() {
+            const newsletterNameInput = document.getElementById('newsletterName');
+            const newsletterEmailInput = document.getElementById('newsletterEmail');
+            const newsletterNameError = document.getElementById('newsletterNameError');
+            const newsletterEmailError = document.getElementById('newsletterEmailError');
+    
+            // Get form elements
+            const newsletterName = newsletterNameInput.value;
+            const newsletterEmail = newsletterEmailInput.value;
+    
+            // Initialize an array to store validation messages
+            const validationMessages = [];
+    
+            // Clear previous error messages
+            newsletterNameError.innerHTML = ''; 
+            newsletterEmailError.innerHTML = ''; 
+    
+            if (newsletterName.trim() === '') {
+                validationMessages.push('Please enter your name.');
+                newsletterNameError.innerHTML = 'Please enter your name.';
+            }
+    
+            if (newsletterEmail.trim() === '') {
+                validationMessages.push('Please enter your email.');
+                newsletterEmailError.innerHTML = 'Please enter your email.';
+            } else if (!isValidEmail(newsletterEmail)) {
+                validationMessages.push('Please enter a valid email.');
+                newsletterEmailError.innerHTML = 'Please enter a valid email.';
+            }
+    
+            // If there are validation errors, prevent the form from submitting
+            if (validationMessages.length > 0) {
+                return false;
+            }
+    
+            return true; // Form is valid, allow submission
+        }
+    
+        // Function to validate email address
+        function isValidEmail(email) {
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            return emailPattern.test(email);
+        }
+    </script>        
+</body>
+</html>

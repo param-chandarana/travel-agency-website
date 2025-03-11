@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up | TravelVista</title>
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="login-body">
+    <main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
+        <div class="container">
+            <div class="card login-card">
+                <div class="row no-gutters">
+                    <div class="col-md-5">
+                        <img src="images/login_2.jpg" alt="login" class="login-card-img">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="card-body">
+                            <div class="brand-wrapper">
+                                <img src="images/logo_with_text_2.png" alt="logo" class="logo">
+                            </div>
+                            <p class="login-card-description">Sign Up</p>
+                            <form action="index.html" method="POST" id="registerForm" onsubmit="return validateForm()">
+                                <div class="form-group">
+                                    <label for="name" class="sr-only">Full Name</label>
+                                    <input type="text" name="name" id="name" class="form-control" placeholder="Full Name">
+                                    <span id="nameError" class="error-message text-danger small"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" class="sr-only">Email</label>
+                                    <input type="text" name="email" id="email" class="form-control" placeholder="Email Address">
+                                    <span id="emailError" class="error-message text-danger small"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone" class="sr-only">Phone Number</label>
+                                    <input type="tel" name="phone" id="phone" class="form-control" placeholder="Phone Number">
+                                    <span id="phoneError" class="error-message text-danger small"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="sr-only">Password</label>
+                                    <input type="password" name="password" id="password" class="form-control" placeholder="Password">
+                                    <span id="passwordError" class="error-message text-danger small"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="repeatPassword" class="sr-only">Repeat Password</label>
+                                    <input type="password" name="password" id="repeatPassword" class="form-control" placeholder="Repeat Password">
+                                    <span id="repeatPasswordError" class="error-message text-danger small"></span>
+                                </div>
+                                <input name="login" id="login" class="btn btn-block btn-purple mb-4" type="submit" value="Register">
+                            </form>                           
+                            <p class="login-card-footer-text">Already have an account? <a href="login.html" class="text-reset">Log in</a></p>
+                            <nav class="login-card-footer-nav">
+                                <a href="tnc.html">Terms & Conditions</a>&nbsp;&nbsp;
+                                <a href="privacy_policy.html">Privacy Policy</a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script>
+        function validateForm() {
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const phoneInput = document.getElementById('phone');
+            const passwordInput = document.getElementById('password');
+            const repeatPasswordInput = document.getElementById('repeatPassword');
+    
+            const nameError = document.getElementById('nameError');
+            const emailError = document.getElementById('emailError');
+            const phoneError = document.getElementById('phoneError');
+            const passwordError = document.getElementById('passwordError');
+            const repeatPasswordError = document.getElementById('repeatPasswordError');
+    
+            // Get form elements
+            const name = nameInput.value;
+            const email = emailInput.value;
+            const phone = phoneInput.value;
+            const password = passwordInput.value;
+            const repeatPassword = repeatPasswordInput.value;
+    
+            // Initialize an array to store validation messages
+            const validationMessages = [];
+    
+            // Clear previous error messages
+            nameError.innerHTML = ''; 
+            emailError.innerHTML = ''; 
+            phoneError.innerHTML = ''; 
+            passwordError.innerHTML = ''; 
+            repeatPasswordError.innerHTML = ''; 
+    
+            if (name.trim() === '') {
+                validationMessages.push('Please enter your name.');
+                nameError.innerHTML = 'Please enter your name.';
+            }
+    
+            if (email.trim() === '') {
+                validationMessages.push('Please enter your email.');
+                emailError.innerHTML = 'Please enter your email.';
+            } else if (!isValidEmail(email)) {
+                validationMessages.push('Please enter a valid email.');
+                emailError.innerHTML = 'Please enter a valid email.';
+            }
+    
+            if (phone.trim() === '') {
+                validationMessages.push('Please enter your phone number.');
+                phoneError.innerHTML = 'Please enter your phone number.';
+            }
+    
+            if (password === '') {
+                validationMessages.push('Please enter your password.');
+                passwordError.innerHTML = 'Please enter your password.';
+            }
+    
+            if (repeatPassword === '') {
+                validationMessages.push('Please repeat your password.');
+                repeatPasswordError.innerHTML = 'Please repeat your password.';
+            } else if (password !== repeatPassword) {
+                validationMessages.push('Passwords do not match.');
+                repeatPasswordError.innerHTML = 'Passwords do not match.';
+            }
+    
+            // If there are validation errors, prevent the form from submitting
+            if (validationMessages.length > 0) {
+                return false;
+            }
+    
+            return true; // Form is valid, allow submission
+        }
+    
+        // Function to validate email address
+        function isValidEmail(email) {
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            return emailPattern.test(email);
+        }
+    </script>    
+</body>
+</html>

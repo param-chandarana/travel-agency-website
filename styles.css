@@ -1,0 +1,723 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1rem; /* 16px converted to rem */
+  color: #07050d;
+  font-family: 'Lato', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #6f61c0;
+}
+
+.auto-height {
+  height: auto;
+}
+
+.heading {
+  font-weight: bold;
+  font-size: 1.625em; /* 26px */
+}
+
+.heading-background {
+  background-image: url("images/login_1.jpg");
+  background-size: 100%;
+  height: 18em;
+}
+
+@media screen and (max-width: 1120px) {
+  .heading-background {
+    background-image: url("images/login_1.jpg");
+    background-size: 100%;
+    height: 15em;
+  }
+}
+
+@media screen and (max-width: 928px) {
+  .heading-background {
+    background-image: url("images/login_1.jpg");
+    background-size: 125%;
+    height: 15em;
+  }
+}
+
+@media screen and (max-width: 742px) {
+  .heading-background {
+    background-image: url("images/login_1.jpg");
+    background-size: 150%;
+    height: 15em;
+  }
+}
+
+@media screen and (max-width: 618px) {
+  .heading-background {
+    background-image: url("images/login_1.jpg");
+    background-size: 200%;
+    height: 15em;
+  }
+}
+
+@media screen and (max-width: 618px) {
+  .heading-background {
+    background-image: url("images/login_1.jpg");
+    background-size: 250%;
+    height: 15em;
+  }
+}
+
+@media screen and (max-width: 412px) {
+  .heading-background {
+    background-image: url("images/login_1.jpg");
+    background-size: 250%;
+    height: 12em;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .heading-background {
+    background-image: url("images/login_1.jpg");
+    background-size: 250%;
+    height: 10em;
+  }
+}
+
+.subheading {
+  font-size: 1.25em;
+}
+
+.smaller-subheading {
+  font-size: 1.15em !important;
+}
+
+.sub-subheading {
+  font-size: 1rem !important;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.btn-purple {
+  background-color: #6f61c0;
+  border: none !important;
+  color: #fff !important;
+  height: fit-content;
+}
+
+.btn-purple:hover {
+  background-color: #07050d;
+}
+
+.form-check-input[type='checkbox']:checked {
+  background-color: #6f61c0;
+  border: none;
+}
+
+/* Remove the blue default shadow when an element is focussed */
+button:focus, input:focus, textarea:focus {
+  box-shadow: none !important;
+}
+
+.card-title {
+  color: #6f61c0;
+  font-size: 1.25em; /* 20px */
+}
+
+.card {
+  border: none !important;
+  color: #07050d;
+  background-color: #ede6ff;
+  border-radius: 10px;
+}
+
+.small-rule {
+  width: 45%;
+  height: 0.15em;
+  margin: 0.5em auto;
+  background-color: #6f61c0;
+}
+
+.modal-header {
+  background-color: #ede6ff;
+}
+
+
+/* Navbar */
+.logo {
+  max-width: 5em;
+}
+
+.navbar {
+  background-color: #ede6ff;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.nav-item {
+  margin: 0 0.625em; /* 10px */
+}
+
+.nav-link {
+  color: #6f61c0;
+}
+
+.active {
+  color: #07050d !important;
+}
+
+.nav-link:hover {
+  color: #07050d;
+  transition: 0.2s;
+}
+
+@media screen and (min-width: 992px) {
+  .nav-item {
+    position: relative;
+  }
+
+  .nav-item:after {
+    content: "";
+    position: absolute;
+    background-color: #6f61c0;
+    height: 0.19em; /* 3px */
+    width: 0;
+    left: 0;
+    bottom: -0.625em; /* 10px */
+    transition: 0.2s;
+  }
+
+  .nav-item:hover:after {
+    width: 100%;
+  }
+
+  .active-item {
+    position: relative;
+  }
+
+  .active-item:after {
+    content: "";
+    position: absolute;
+    background-color: #6f61c0;
+    height: 0.19em; /* 3px */
+    width: 100%;
+    left: 0;
+    bottom: -0.625em; /* 10px */
+  }
+}
+
+.search-box {
+  background: #fff;
+  height: 2.5em; /* 40px */
+  border-radius: 2.5em; /* 40px */
+  margin-right: 0.625em; /* 10px */
+}
+
+.search-box:hover > .search-input {
+  width: 12.5em; /* 200px */
+  padding: 0 0.5em; /* 8px */
+}
+
+.search-box:hover > .search-button {
+  background-color: #fff;
+  color: #6f61c0;
+}
+
+.search-button {
+  color: #fff;
+  float: right;
+  width: 2.5em; /* 40px */
+  height: 2.5em; /* 40px */
+  border-radius: 50%;
+  background-color: #6f61c0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+}
+
+.search-input {
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  color: #6f61c0;
+  font-size: 1em; /* 16px */
+  transition: 0.4s;
+  line-height: 2.5em; /* 40px */
+  width: 0;
+}
+
+@media screen and (max-width: 620px) {
+  .search-box:hover > .search-input {
+    width: 9.375em; /* 150px */
+    padding: 0 0.375em; /* 6px */
+  }
+}
+
+/* Footer */
+.footer {
+  background-color: #ede6ff !important;
+}
+
+.footer-logo {
+  max-width: 11.25em; /* 180px */
+}
+
+.footer-text {
+  font-size: 1em; /* 16px */
+}
+
+.footer-heading {
+  font-weight: bold;
+}
+
+.newsletter-form > input {
+  border: none;
+}
+
+.footer-link {
+  color: #6f61c0;
+}
+
+.social-icon {
+  font-size: 1.5em; /* 24px */
+  color: #6f61c0;
+}
+
+.footer-link:hover,
+.social-icon:hover {
+  color: #07050d;
+}
+
+/* Home Carousel */
+.carousel-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1)
+  ); /* Black gradient overlay */
+  color: white;
+  padding: 1.25em; /* 20px */
+  box-sizing: border-box;
+}
+
+/* Home Why Us */
+.why-us-icon {
+  color: #6f61c0;
+}
+
+@media screen and (min-width: 768px) {
+  .why-us-card {
+    height: 12.5em;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .why-us-card {
+    height: 17em;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .why-us-card {
+    height: 15.5em;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .why-us-card {
+    height: 12.5em;
+  }
+}
+
+/* Explore Packages Banner */
+.banner {
+  display: flex;
+  justify-content: center;
+  border-radius: 0.625em; /* 10px */
+  margin: 1.25em auto 0 auto; /* 20px, 0px, 0px, 0px */
+  width: 100%;
+}
+
+/* Explore Packages Cards Sliders */
+.exp-heading-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.exp-cards-whole {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.exp-cards-except-btns {
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.exp-cards-except-btns::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari and Opera */
+}
+
+.exp-cards-except-btns {
+  -ms-overflow-style: none; /* For IE and Edge */
+  scrollbar-width: none; /* For Firefox */
+}
+
+.exp-card {
+  width: 15.625em; /* 250px */
+  height: 13.4375em; /* 215px */
+  border-radius: 0.3125em; /* 5px */
+  border: none !important;
+  box-shadow: 0px 0.3125em 0.3125em rgba(0, 0, 0, 0.2); /* 5px, 5px */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  color: #07050d;
+  margin: 0.625em; /* 10px */
+}
+
+.exp-card:hover {
+  background-color: #ede6ff;
+  transform: translateY(-0.05em);
+  box-shadow: 0px 0.3125em 0.75em rgba(0, 0, 0, 0.2); /* 5px, 15px */
+}
+
+.exp-card-image-container > img {
+  border-radius: 0.3125em 0.3125em 0 0;
+  width: 15.625em; /* 250px */
+  height: 8.75em; /* 140px */
+}
+
+.exp-card-text-container {
+  padding: 0.5em; /* 8px */
+}
+
+.exp-card-text-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.exp-card-text-heading > h3 {
+  color: #6f61c0;
+  font-size: 1.25em; /* 20px */
+}
+
+.exp-card-text-details > p {
+  color: #07050d;
+}
+
+.btn-pre,
+.btn-nxt {
+  height: 100%;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  opacity: 0.4;
+  background-color: transparent;
+}
+
+.btn-pre:hover,
+.btn-nxt:hover {
+  opacity: 1;
+}
+
+/* Contact Us page */
+
+/* Contact us form container */
+.contact-form {
+  background-color: #ede6ff;
+  border-radius: 10px;
+  padding: 1.5em;
+}
+
+.rule-less-margin {
+  margin: 0 25em 0 0;
+  background-color: #6f61c0;
+  height: 0.25em;
+  width: 7em;
+}
+
+/* Contact Us Text Area */
+.form-control#message {
+  resize: none;
+}
+
+/* Login Page */
+.login-body {
+  
+  min-height: 100vh;
+}
+
+.brand-wrapper {
+  margin-bottom: 1.1875em;
+}
+
+.brand-wrapper .logo {
+  width: 18.75em;
+}
+
+.login-card {
+  background-color: #ede6ff;
+  border: 0;
+  border-radius: 1.71875em;
+  box-shadow: 0 0.625em 1.875em 0 rgba(172, 168, 168, 0.43);
+  overflow: hidden;
+}
+
+.login-card-img {
+  border-radius: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.login-card .card-body {
+  padding: 5.3125em 3.75em 3.75em;
+}
+
+@media (max-width: 422px) {
+  .login-card .card-body {
+    padding: 2.1875em 1.5em;
+  }
+}
+
+.login-card-description {
+  font-size: 1.5625em;
+  color: #000;
+  font-weight: normal;
+  margin-bottom: 1.4375em;
+}
+
+.login-card form {
+  max-width: 20.375em;
+}
+
+.login-card .form-control {
+  border: 0.0625em solid #d5dae2;
+  margin-bottom: 0.625em;
+  min-height: 2.8125em;
+  font-size: 0.85em;
+  line-height: 0.9375em;
+  font-weight: normal;
+}
+
+.login-card .login-btn {
+  padding: 0.8125em 1.25em 0.75em;
+  background-color: #000;
+  border-radius: 0.25em;
+  font-size: 1.0625em;
+  font-weight: bold;
+  line-height: 1.25em;
+  color: #fff;
+  margin-bottom: 1.5em;
+}
+
+.login-card .forgot-password-link {
+  font-size: 0.875em;
+  color: #919aa3;
+  margin-bottom: 0.75em;
+}
+
+.login-card-footer-text {
+  font-size: 1em;
+  margin-bottom: 3.75em;
+}
+
+.text-reset {
+  color: #6f61c0 !important;
+}
+
+.text-reset:hover {
+  text-decoration: none;
+  color: #07050d !important;
+}
+
+@media (max-width: 767px) {
+  .login-card-footer-text {
+    margin-bottom: 1.5em;
+  }
+}
+
+.login-card-footer-nav a {
+  font-size: 0.875em;
+  color: #919aa3;
+}
+
+/* Checkbox Styling */
+.form-check-input {
+  margin-right: 0.5rem;
+}
+
+.login-card-body {
+  padding: 0;
+}
+
+/* About Us Page */
+.cover {
+  background-image: url("images/login_1.jpg");
+  font-size: large;
+  height: 42em;
+  background-size: 96em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ede6ff;
+}
+
+/* About Us Subheadings */
+.about-us-subheading {
+  font-size: 1.5em; /* 24px */
+}
+
+.cover-rule {
+  width: 8.5em;
+  margin: 1.75em auto;
+  background-color: #07050d;
+  height: 0.25em;
+}
+
+.cover > div > h1 {
+  color: #07050d;
+}
+
+.about-us-div {
+  background-color: #ede6ff;
+  border-radius: 10px;
+  padding: 0;
+  margin: 2px;
+}
+
+.about-us-div-image > img {
+  border-radius: 10px;
+  height: 100%;
+}
+
+.rule {
+  margin: 2.5em 25em 2.5em 0;
+  background-color: #6f61c0;
+  height: 0.25em;
+  width: 7em;
+}
+
+.parent-full-width-rule {
+  width: 7em;
+}
+
+
+
+/* About Us Images */
+.card-img-top {
+  width: 50%;
+  align-self: center;
+}
+
+/* About Us Image Credits */
+.credits {
+  font-size: 0.625em; /* 10px */
+}
+
+.credits > a {
+  color: #6f61c0;
+}
+
+/* Package Details Page*/
+.icon {
+  color: #6f61c0;
+}
+
+/* What's included icons */
+.round-div {
+  background-color: #ced4da;
+  color: #6f61c0;
+  border-radius: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Date Cards */
+.package-details-date-card {
+  width: 6.8em;
+  height: 6.8em;
+  background-color: #ede6ff;
+  border-radius: 10px;
+  transition: box-shadow 0.3s ease;
+}
+
+.package-details-date-card:hover {
+  box-shadow: 0px 0.3125em 0.6em rgba(0, 0, 0, 0.2);
+}
+
+/* Open Accordion Button */
+.accordion-button[aria-expanded="true"] {
+  background-color: #ede6ff;
+  color: #6f61c0;
+}
+
+.table > thead > tr > th {
+	background-color: #ede6ff;
+}
+
+/* All Packages Page */
+.all-packages-card {
+  background-color: #ede6ff;
+  box-shadow: 0px 0.3125em 0.3125em rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  border-radius: 10px;
+}
+
+.all-packages-card:hover {
+  transform: translateX(-0.05em);
+  box-shadow: 0px 0.3125em 0.75em rgba(0, 0, 0, 0.2);
+}
+
+.all-packages-img {
+  width: 100%;
+}
+
+.offcanvas-btn {
+  left: 0.5%;
+  top: 8%;
+}
+
+.about-us-div-text a {
+  color: #6f61c0;
+  transition: color 0.2s;
+}
+
+.all-packages-link:hover {
+  color: #07050d !important;
+}
+
+/* Change the color of the range slider dot */
+input[type="range"]::-webkit-slider-thumb {
+  background-color: #6f61c0 !important;
+}
+
+input[type="range"]::-moz-range-thumb {
+  background-color: #6f61c0 !important;
+}
+
+input[type="range"]::-ms-thumb {
+  background-color: #6f61c0 !important;
+}
+
+/* Testimonials Page */
+.quote-icon {
+  color: #6f61c0;
+}
